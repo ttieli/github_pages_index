@@ -1,0 +1,11 @@
+Repository Name | Description | Pages URL | Repo URL
+---------------|-------------|-----------|----------
+
+allowance-manager | 家庭额度管理系统 | https://ttieli.github.io/allowance-manager/ | https://github.com/ttieli/allowance-manager
+github_pages_index | A centralized index page for all my GitHub Pages projects | https://ttieli.github.io/github_pages_index/ | https://github.com/ttieli/github_pages_index
+Scan | Scan | https://ttieli.github.io/Scan/ | https://github.com/ttieli/Scan
+SpecKit-Manager | Spec Kit Project Management - Firebase-powered workflow tracker with auto-persistence and enhanced visualization | https://ttieli.github.io/SpecKit-Manager/ | https://github.com/ttieli/SpecKit-Manager
+vocabulary-cards |  | https://ttieli.github.io/vocabulary-cards/ | https://github.com/ttieli/vocabulary-cards
+
+Total repositories scanned: 18
+Repositories with GitHub Pages: 5
