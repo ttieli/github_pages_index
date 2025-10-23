@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Index of all my GitHub Pages projects - discover and explore my web development portfolio">
+  <title>My GitHub Pages Projects</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <h1 class="site-title">My GitHub Pages Projects</h1>
+      <p class="site-description">A collection of my web development projects</p>
+    </div>
+  </header>
+
+  <main class="projects-container">
+    <section class="projects-grid">
+
+      <!-- My GitHub Pages Projects -->
+
+      <article class="project-card">
+        <h2 class="project-title">
+          <a href="https://ttieli.github.io/SpecKit-Manager/" class="project-link">SpecKit-Manager</a>
+        </h2>
+        <p class="project-description">Spec Kit Project Management - Firebase-powered workflow tracker with auto-persistence and enhanced visualization</p>
+      </article>
+
+      <article class="project-card">
+        <h2 class="project-title">
+          <a href="https://ttieli.github.io/allowance-manager/" class="project-link">Allowance Manager</a>
+        </h2>
+        <p class="project-description">家庭额度管理系统 - 帮助家庭管理和追踪日常开支额度</p>
+      </article>
+
+      <article class="project-card">
+        <h2 class="project-title">
+          <a href="https://ttieli.github.io/vocabulary-cards/" class="project-link">Vocabulary Cards</a>
+        </h2>
+        <p class="project-description">交互式词汇卡片应用，帮助学习和记忆新单词</p>
+      </article>
+
+      <article class="project-card">
+        <h2 class="project-title">
+          <a href="https://ttieli.github.io/Scan/" class="project-link">Scan</a>
+        </h2>
+        <p class="project-description">扫描工具应用</p>
+      </article>
+
+      <!-- Project Template: Copy this block to add new projects -->
+      <!--
+      <article class="project-card">
+        <h2 class="project-title">
+          <a href="https://ttieli.github.io/your-project/" class="project-link">Project Name</a>
+        </h2>
+        <p class="project-description">Project description here...</p>
+      </article>
+      -->
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        &copy; 2025 TieLi. View on
+        <a href="https://github.com/ttieli/github_pages_index" class="footer-link">GitHub</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

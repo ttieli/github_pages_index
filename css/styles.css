@@ -1,4 +1,193 @@
 /* ========================================
+   CSS Custom Properties (Design System)
+   ======================================== */
+
+:root {
+  /* ========================================
+     Color System
+     ======================================== */
+
+  /* Base Colors */
+  --color-text-primary: #333333;
+  --color-text-secondary: #6B7280;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-border: #E5E7EB;
+
+  /* Category Colors: Management */
+  --color-category-management-primary: #0066CC;
+  --color-category-management-bg: #E6F2FF;
+  --color-category-management-border: #0052A3;
+  --color-category-management-text: #004499;
+
+  /* Category Colors: Learning */
+  --color-category-learning-primary: #047857;
+  --color-category-learning-bg: #D1FAE5;
+  --color-category-learning-border: #065F46;
+  --color-category-learning-text: #065F46;
+
+  /* Category Colors: Utility */
+  --color-category-utility-primary: #7C3AED;
+  --color-category-utility-bg: #EDE9FE;
+  --color-category-utility-border: #6D28D9;
+  --color-category-utility-text: #5B21B6;
+
+  /* Category Colors: Portfolio */
+  --color-category-portfolio-primary: #DC2626;
+  --color-category-portfolio-bg: #FEE2E2;
+  --color-category-portfolio-border: #B91C1C;
+  --color-category-portfolio-text: #991B1B;
+
+  /* Status Colors: Active */
+  --color-status-active-text: #FFFFFF;
+  --color-status-active-bg: #10B981;
+  --color-status-active-border: #059669;
+
+  /* Status Colors: Beta */
+  --color-status-beta-text: #FFFFFF;
+  --color-status-beta-bg: #3B82F6;
+  --color-status-beta-border: #2563EB;
+
+  /* Status Colors: Archived */
+  --color-status-archived-text: #FFFFFF;
+  --color-status-archived-bg: #6B7280;
+  --color-status-archived-border: #4B5563;
+
+  /* Status Colors: Experimental */
+  --color-status-experimental-text: #000000;
+  --color-status-experimental-bg: #F59E0B;
+  --color-status-experimental-border: #D97706;
+
+  /* Focus Colors */
+  --color-focus: #3B82F6;
+
+  /* ========================================
+     Typography System
+     ======================================== */
+
+  /* Font Families */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont,
+                      "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+                      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Font Sizes - 8pt baseline grid */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.5rem;       /* 24px */
+  --font-size-2xl: 2rem;        /* 32px */
+  --font-size-3xl: 2.5rem;      /* 40px */
+
+  /* Line Heights - 4pt baseline */
+  --line-height-tight: 1.2;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================
+     Spacing System - 8pt Grid
+     ======================================== */
+
+  --spacing-0: 0;
+  --spacing-half: 0.25rem;  /* 4px - half unit */
+  --spacing-1: 0.5rem;      /* 8px */
+  --spacing-2: 1rem;        /* 16px */
+  --spacing-3: 1.5rem;      /* 24px */
+  --spacing-4: 2rem;        /* 32px */
+  --spacing-5: 2.5rem;      /* 40px */
+  --spacing-6: 3rem;        /* 48px */
+  --spacing-8: 4rem;        /* 64px */
+  --spacing-10: 5rem;       /* 80px */
+  --spacing-12: 6rem;       /* 96px */
+
+  /* ========================================
+     Sizing System
+     ======================================== */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-base: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Border Width */
+  --border-width-thin: 1px;
+  --border-width-base: 2px;
+  --border-width-thick: 4px;
+
+  /* Container Max Widths */
+  --container-xs: 640px;
+  --container-sm: 768px;
+  --container-md: 1024px;
+  --container-lg: 1280px;
+  --container-xl: 1536px;
+
+  /* Icon Sizes */
+  --icon-sm: 16px;
+  --icon-base: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 48px;
+
+  /* ========================================
+     Shadow System
+     ======================================== */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+               0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+               0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(66, 153, 225, 0.5);
+
+  /* ========================================
+     Transition System
+     ======================================== */
+
+  --transition-fast: 100ms ease-in-out;
+  --transition-base: 150ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* ========================================
+     Responsive Spacing (Mobile Default)
+     ======================================== */
+
+  --container-padding: var(--spacing-2);
+  --card-padding: var(--spacing-3);
+  --section-gap: var(--spacing-4);
+}
+
+/* ========================================
+   Responsive Typography & Spacing
+   ======================================== */
+
+/* Tablet: 768px+ */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: var(--spacing-3);
+    --card-padding: var(--spacing-4);
+    --section-gap: var(--spacing-6);
+  }
+}
+
+/* Desktop: 1024px+ */
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--spacing-4);
+    --card-padding: var(--spacing-5);
+    --section-gap: var(--spacing-8);
+  }
+}
+
+/* ========================================
    CSS Reset & Base Styles
    ======================================== */
 
@@ -15,11 +204,11 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
   background-color: #f8f9fa;
-  padding: 20px;
+  padding: var(--container-padding);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,17 +219,24 @@ body {
    ======================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-semibold);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-2xl);
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-xl);
+}
+
+/* Responsive typography */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
 }
 
 p {
@@ -97,8 +293,8 @@ a:hover {
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 0 1rem;
+  gap: var(--spacing-3);
+  padding: 0 var(--container-padding);
 }
 
 /* ========================================
@@ -106,15 +302,15 @@ a:hover {
    ======================================== */
 
 .project-card {
-  background: white;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background: var(--color-bg-primary);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-base);
+  padding: var(--card-padding);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
 .project-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }
 
@@ -135,9 +331,13 @@ a:hover {
 }
 
 .project-link:focus {
-  outline: 2px solid #0066cc;
+  outline: none;
+}
+
+.project-link:focus-visible {
+  outline: 3px solid var(--color-focus);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .project-description {
@@ -183,12 +383,12 @@ a:hover {
 
 @media (min-width: 768px) {
   .site-title {
-    font-size: 3rem;
+    font-size: var(--font-size-3xl);
   }
 
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: var(--section-gap);
   }
 }
 
@@ -199,10 +399,188 @@ a:hover {
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: var(--section-gap);
   }
 
   .project-card {
-    padding: 2rem;
+    padding: var(--card-padding);
   }
+}
+
+/* ========================================
+   Accessibility Utilities
+   ======================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========================================
+   Badge Styles
+   ======================================== */
+
+.category-badge {
+  display: inline-block;
+  padding: var(--spacing-half) var(--spacing-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+.category-badge[data-category="management"] {
+  background-color: var(--color-category-management-bg);
+  color: var(--color-category-management-text);
+  border: var(--border-width-thin) solid var(--color-category-management-border);
+}
+
+.category-badge[data-category="learning"] {
+  background-color: var(--color-category-learning-bg);
+  color: var(--color-category-learning-text);
+  border: var(--border-width-thin) solid var(--color-category-learning-border);
+}
+
+.category-badge[data-category="utility"] {
+  background-color: var(--color-category-utility-bg);
+  color: var(--color-category-utility-text);
+  border: var(--border-width-thin) solid var(--color-category-utility-border);
+}
+
+.category-badge[data-category="portfolio"] {
+  background-color: var(--color-category-portfolio-bg);
+  color: var(--color-category-portfolio-text);
+  border: var(--border-width-thin) solid var(--color-category-portfolio-border);
+}
+
+/* ========================================
+   Category-Based Card Styling
+   ======================================== */
+
+.project-card[data-category="management"] {
+  border-left: var(--border-width-thick) solid var(--color-category-management-primary);
+}
+
+.project-card[data-category="learning"] {
+  border-left: var(--border-width-thick) solid var(--color-category-learning-primary);
+}
+
+.project-card[data-category="utility"] {
+  border-left: var(--border-width-thick) solid var(--color-category-utility-primary);
+}
+
+.project-card[data-category="portfolio"] {
+  border-left: var(--border-width-thick) solid var(--color-category-portfolio-primary);
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-3);
+}
+
+/* ========================================
+   Technology Tags & Status Badges
+   ======================================== */
+
+.tech-tag {
+  display: inline-block;
+  padding: var(--spacing-half) var(--spacing-2);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-half);
+  padding: var(--spacing-half) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.status-badge[data-status="active"] {
+  background-color: var(--color-status-active-bg);
+  color: var(--color-status-active-text);
+  border: var(--border-width-thin) solid var(--color-status-active-border);
+}
+
+.status-badge[data-status="beta"] {
+  background-color: var(--color-status-beta-bg);
+  color: var(--color-status-beta-text);
+  border: var(--border-width-thin) solid var(--color-status-beta-border);
+}
+
+.status-badge[data-status="archived"] {
+  background-color: var(--color-status-archived-bg);
+  color: var(--color-status-archived-text);
+  border: var(--border-width-thin) solid var(--color-status-archived-border);
+}
+
+.status-badge[data-status="experimental"] {
+  background-color: var(--color-status-experimental-bg);
+  color: var(--color-status-experimental-text);
+  border: var(--border-width-thin) solid var(--color-status-experimental-border);
+}
+
+.badge-icon {
+  font-size: 0.75em;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-2) 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.project-features li {
+  padding-left: var(--spacing-3);
+  position: relative;
+  margin-bottom: var(--spacing-1);
+}
+
+.project-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-category-learning-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ========================================
+   Project Icons
+   ======================================== */
+
+.project-icon {
+  font-size: var(--icon-lg);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+  display: block;
 }
