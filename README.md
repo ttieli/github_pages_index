@@ -8,13 +8,15 @@ This project provides a simple, static HTML page that serves as a directory for 
 
 ## Features
 
+- **Bilingual Support**: Chinese (简体中文) language interface with `lang="zh-CN"` attributes
+- **Themed Project Cards**: Four distinct visual themes for different project types
 - **Visual Project Differentiation**: Color-coded category badges (Management, Learning, Utility)
 - **Rich Metadata Display**: Technology tags, status badges, and key feature highlights
 - **Enhanced Design System**: Professional typography, spacing, and visual hierarchy
 - **Project Icons**: Emoji icons for quick visual recognition
 - **Responsive Design**: Works seamlessly on mobile (320px+), tablet, and desktop devices
-- **Easy to Maintain**: Add new projects with enhanced styling in < 10 minutes
-- **Fast Loading**: Static HTML with no dependencies or build tools
+- **Easy to Maintain**: Add new projects with themed styling in < 10 minutes
+- **Fast Loading**: Static HTML with no dependencies or build tools (CSS themes add ~2.7KB)
 - **Accessible**: WCAG 2.1 Level AA compliant with screen reader support
 
 ## Quick Start
@@ -65,49 +67,129 @@ This project provides a simple, static HTML page that serves as a directory for 
    https://[username].github.io/github_pages_index/
    ```
 
-## Adding a New Project
+## Adding a Themed Project (with Chinese)
+
+### Quick Reference: Available Themes
+
+| Theme | Visual Style | Best For | Example Projects |
+|-------|--------------|----------|------------------|
+| **matrix** | Dark background, green text, monospace font, hacker aesthetic | Programming tools, developer utilities, technical projects | SpecKit-Manager |
+| **family** | Warm cream background, coral orange accents, rounded corners | Family apps, budgeting, child-friendly tools | Allowance Manager |
+| **nintendo** | White background, bright red border, playful game design | Educational games, interactive learning, fun apps | Vocabulary Cards |
+| **utility** | Light blue-gray background, professional colors, minimal design | Tools, scanners, utilities, professional apps | Scan |
+
+### Theme Technical Specifications
+
+| Theme | Background | Text Color | Contrast Ratio | WCAG Level | Special Effects |
+|-------|------------|------------|----------------|------------|-----------------|
+| Matrix | `#0d0d0d` | `#00FF41` | 8.2:1 | AAA | Green glow on hover, monospace font |
+| Family | `#FFF5EE` | `#CC6633` | 4.6:1 | AA | Heart bullets (♥), rounded 12px |
+| Nintendo | `#FFFFFF` | `#E60012` | 5.3:1 | AA | Star bullets (⭐), scale-up hover, 16px rounded |
+| Utility | `#F5F7FA` | `#3A5A78` | 6.8:1 | AA | Arrow bullets (▸), minimal 4px rounded |
+
+### Adding a Chinese-Language Themed Project
 
 1. Open `index.html` in your text editor
 2. Find the `<section class="projects-grid">` element
-3. Copy an existing project card or use this enhanced template:
+3. Use this template with Chinese content and theme attribute:
 
 ```html
-<article class="project-card" data-category="[CATEGORY]" data-status="[STATUS]">
-  <div class="project-icon" role="img" aria-label="[CATEGORY] project">[ICON]</div>
+<article class="project-card"
+         data-category="[CATEGORY]"
+         data-status="[STATUS]"
+         data-theme="[THEME]">
+
+  <!-- Project Icon -->
+  <div class="project-icon" role="img" aria-label="[CHINESE_CATEGORY]">[ICON]</div>
+
+  <!-- Project Header -->
   <header class="project-header">
     <h2 class="project-title">
-      <a href="https://username.github.io/new-project/" class="project-link">New Project Name</a>
+      <a href="https://username.github.io/new-project/" class="project-link">Project Name</a>
     </h2>
   </header>
-  <p class="project-description">Brief description of what this project does.</p>
-  <div class="project-technologies" aria-label="Technologies used">
-    <span class="tech-tag">Technology 1</span>
-    <span class="tech-tag">Technology 2</span>
+
+  <!-- Chinese Description -->
+  <p class="project-description" lang="zh-CN">[CHINESE_DESCRIPTION]</p>
+
+  <!-- Technology Tags -->
+  <div class="project-technologies" aria-label="使用技术">
+    <span class="tech-tag">Firebase</span>
+    <span class="tech-tag">JavaScript</span>
   </div>
-  <ul class="project-features" aria-label="Key features">
-    <li>Feature 1</li>
-    <li>Feature 2</li>
+
+  <!-- Feature List (Chinese) -->
+  <ul class="project-features" aria-label="主要功能" lang="zh-CN">
+    <li>[CHINESE_FEATURE_1]</li>
+    <li>[CHINESE_FEATURE_2]</li>
+    <li>[CHINESE_FEATURE_3]</li>
   </ul>
+
+  <!-- Meta Footer with Chinese Badges -->
   <footer class="project-meta">
-    <span class="category-badge" data-category="[CATEGORY]">
-      <span class="visually-hidden">Category:</span>
-      [CATEGORY_NAME]
+    <span class="category-badge" data-category="[CATEGORY]" lang="zh-CN">
+      <span class="visually-hidden">类别:</span>
+      [CHINESE_CATEGORY_NAME]
     </span>
-    <span class="status-badge" data-status="[STATUS]" role="status">
+    <span class="status-badge" data-status="[STATUS]" role="status" lang="zh-CN">
       <span class="badge-icon" aria-hidden="true">[SYMBOL]</span>
-      <span class="badge-text">[STATUS_NAME]</span>
+      <span class="badge-text">[CHINESE_STATUS]</span>
     </span>
   </footer>
 </article>
 ```
 
 4. Replace placeholders:
-   - `[CATEGORY]`: `management`, `learning`, `utility`, or `portfolio`
-   - `[CATEGORY_NAME]`: `Management`, `Learning`, `Utility`, or `Portfolio`
-   - `[ICON]`: 📊 (management), 📚 (learning), 🔧 (utility), 🎨 (portfolio)
-   - `[STATUS]`: `active`, `beta`, `archived`, or `experimental`
-   - `[STATUS_NAME]`: `Active`, `Beta`, `Archived`, or `Experimental`
-   - `[SYMBOL]`: ● (active), ⚡ (beta), ■ (archived), ▲ (experimental)
+
+**Required Attributes:**
+- `[CATEGORY]`: `management`, `learning`, `utility`, or `portfolio`
+- `[STATUS]`: `active`, `beta`, `archived`, or `experimental`
+- `[THEME]`: `matrix`, `family`, `nintendo`, or `utility` (see theme table above)
+
+**Chinese Content:**
+- `[CHINESE_CATEGORY]`: 管理工具 (management), 学习工具 (learning), 实用工具 (utility)
+- `[CHINESE_CATEGORY_NAME]`: Same as above
+- `[CHINESE_DESCRIPTION]`: Project description in Chinese (50-150 characters)
+- `[CHINESE_FEATURE_1/2/3]`: Feature descriptions in Chinese (4-12 characters each)
+- `[CHINESE_STATUS]`: 活跃 (active), 测试中 (beta), 已归档 (archived), 实验性 (experimental)
+
+**Icons & Symbols:**
+- `[ICON]`: 📊 (management), 📚 (learning), 🔧 (utility), 🎨 (portfolio)
+- `[SYMBOL]`: ● (active), ⚡ (beta), ■ (archived), ▲ (experimental)
+
+### Complete Example: Matrix Theme Project (Chinese)
+
+```html
+<article class="project-card" data-category="management" data-status="active" data-theme="matrix">
+  <div class="project-icon" role="img" aria-label="管理工具">📊</div>
+  <header class="project-header">
+    <h2 class="project-title">
+      <a href="https://ttieli.github.io/SpecKit-Manager/" class="project-link">SpecKit-Manager</a>
+    </h2>
+  </header>
+  <p class="project-description" lang="zh-CN">SpecKit项目管理器 - 基于Firebase的工作流追踪工具,支持自动保存和可视化增强</p>
+  <div class="project-technologies" aria-label="使用技术">
+    <span class="tech-tag">Firebase</span>
+    <span class="tech-tag">JavaScript</span>
+    <span class="tech-tag">HTML5</span>
+  </div>
+  <ul class="project-features" aria-label="主要功能" lang="zh-CN">
+    <li>实时工作流追踪</li>
+    <li>自动保存持久化</li>
+    <li>可视化增强</li>
+  </ul>
+  <footer class="project-meta">
+    <span class="category-badge" data-category="management" lang="zh-CN">
+      <span class="visually-hidden">类别:</span>
+      管理工具
+    </span>
+    <span class="status-badge" data-status="active" role="status" lang="zh-CN">
+      <span class="badge-icon" aria-hidden="true">●</span>
+      <span class="badge-text">活跃</span>
+    </span>
+  </footer>
+</article>
+```
 
 5. Save the file
 6. Commit and push:
