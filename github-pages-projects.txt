@@ -6,6 +6,7 @@ github_pages_index | A centralized index page for all my GitHub Pages projects |
 Scan | Scan | https://ttieli.github.io/Scan/ | https://github.com/ttieli/Scan
 SpecKit-Manager | Spec Kit Project Management - Firebase-powered workflow tracker with auto-persistence and enhanced visualization | https://ttieli.github.io/SpecKit-Manager/ | https://github.com/ttieli/SpecKit-Manager
 vocabulary-cards |  | https://ttieli.github.io/vocabulary-cards/ | https://github.com/ttieli/vocabulary-cards
+water-temperature-calculation | water temperature calculation | https://ttieli.github.io/water-temperature-calculation/ | https://github.com/ttieli/water-temperature-calculation
 
-Total repositories scanned: 18
-Repositories with GitHub Pages: 5
+Total repositories scanned: 20
+Repositories with GitHub Pages: 6
