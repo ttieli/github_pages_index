@@ -974,3 +974,165 @@ a:hover {
 .project-card[data-theme="utility"] .project-icon {
   filter: drop-shadow(0 1px 2px rgba(58, 90, 120, 0.15));
 }
+
+/* ========================================
+   Theme Styles: Science Theme
+   ======================================== */
+
+/* Science Theme: Base Styles */
+.project-card[data-theme="science"] {
+  background-color: #F0F8FF;
+  color: #1E3A5F;
+  border: 1px solid #B3D9FF;
+  border-left: var(--border-width-thick) solid #4A90E2;
+  border-radius: 8px;
+}
+
+.project-card[data-theme="science"] .project-link {
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.project-card[data-theme="science"] .project-link:hover {
+  color: #2E5C8A;
+  text-decoration: underline;
+}
+
+.project-card[data-theme="science"] .project-description {
+  color: #4A6B8A;
+}
+
+.project-card[data-theme="science"] .tech-tag {
+  background-color: #E3F2FD;
+  color: #1E3A5F;
+  border: 1px solid #B3D9FF;
+}
+
+.project-card[data-theme="science"] .category-badge {
+  background-color: #E3F2FD;
+  color: #1E3A5F;
+  border: 1px solid #4A90E2;
+}
+
+.project-card[data-theme="science"] .status-badge {
+  background-color: #4A90E2;
+  color: #FFFFFF;
+  border: 1px solid #2E5C8A;
+}
+
+.project-card[data-theme="science"]:hover {
+  border-color: #4A90E2;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   Mobile Optimization - Compact View
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Reduce header spacing */
+  .site-header {
+    margin-bottom: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .site-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .site-description {
+    font-size: 0.875rem;
+  }
+
+  /* Optimize grid spacing */
+  .projects-grid {
+    gap: var(--spacing-2);
+    padding: 0;
+  }
+
+  /* Compact card layout */
+  .project-card {
+    padding: var(--spacing-2);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Hide or minimize icon on mobile */
+  .project-icon {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-half);
+  }
+
+  /* Reduce title size */
+  .project-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Compact description */
+  .project-description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Hide feature list on mobile to save space */
+  .project-features {
+    display: none;
+  }
+
+  /* Compact technology tags */
+  .project-technologies {
+    margin-top: var(--spacing-1);
+    margin-bottom: var(--spacing-1);
+    gap: var(--spacing-half);
+  }
+
+  .tech-tag {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  /* Limit tech tags to 3 items on mobile */
+  .tech-tag:nth-child(n+4) {
+    display: none;
+  }
+
+  /* Compact meta section */
+  .project-meta {
+    margin-top: var(--spacing-2);
+    gap: var(--spacing-1);
+  }
+
+  .category-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.5rem;
+  }
+
+  .status-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.5rem;
+  }
+
+  /* Reduce footer spacing */
+  .site-footer {
+    margin-top: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+  }
+
+  /* Disable transform effects on mobile for better performance */
+  .project-card:hover {
+    transform: none;
+  }
+
+  /* Reduce hover effects on mobile */
+  .project-card:active {
+    opacity: 0.95;
+  }
+}
