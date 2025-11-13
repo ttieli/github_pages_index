@@ -1,14 +1,18 @@
 // Service Worker for GitHub Pages PWA
-// Version 1.0.0
+// Version 1.1.0
 
-const CACHE_NAME = 'github-pages-v1';
+const CACHE_NAME = 'github-pages-v2';
 const urlsToCache = [
   '/github_pages_index/',
   '/github_pages_index/index.html',
   '/github_pages_index/css/styles.css',
   '/github_pages_index/images/logo.svg',
   '/github_pages_index/images/favicon.svg',
+  '/github_pages_index/images/icon-512.png',
+  '/github_pages_index/images/icon-192.png',
   '/github_pages_index/images/apple-touch-icon.png',
+  '/github_pages_index/images/apple-touch-icon-152.png',
+  '/github_pages_index/images/apple-touch-icon-120.png',
   '/github_pages_index/manifest.json'
 ];
 
