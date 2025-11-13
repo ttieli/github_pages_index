@@ -2,11 +2,15 @@
   "name": "GitHub Pages 项目集合",
   "short_name": "GitHub项目",
   "description": "我的GitHub Pages项目索引",
-  "start_url": "/",
+  "start_url": "/github_pages_index/",
+  "scope": "/github_pages_index/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities"],
+  "lang": "zh-CN",
+  "dir": "ltr",
   "icons": [
     {
       "src": "images/logo.svg",
@@ -17,7 +21,8 @@
     {
       "src": "images/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "images/favicon.svg",
