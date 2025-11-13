@@ -15,9 +15,9 @@
       "purpose": "any maskable"
     },
     {
-      "src": "images/apple-touch-icon.svg",
+      "src": "images/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/svg+xml"
+      "type": "image/png"
     },
     {
       "src": "images/favicon.svg",
