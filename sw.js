@@ -1,7 +1,7 @@
 // Service Worker for GitHub Pages PWA
-// Version 1.1.0
+// Version 1.2.0
 
-const CACHE_NAME = 'github-pages-v2';
+const CACHE_NAME = 'github-pages-v3';
 const urlsToCache = [
   '/github_pages_index/',
   '/github_pages_index/index.html',
@@ -55,45 +55,32 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 拦截请求 - 使用缓存优先策略
+// 拦截请求 - 使用网络优先策略 (Network First)
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then((response) => {
-        // 缓存命中，返回缓存的资源
-        if (response) {
-          console.log('[Service Worker] Serving from cache:', event.request.url);
+        // 网络请求成功
+        // 检查是否是有效的响应
+        if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
         }
 
-        // 没有缓存，发起网络请求
-        console.log('[Service Worker] Fetching from network:', event.request.url);
-        return fetch(event.request).then((response) => {
-          // 检查是否是有效的响应
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
+        // 克隆响应，因为响应流只能使用一次
+        const responseToCache = response.clone();
 
-          // 克隆响应，因为响应流只能使用一次
-          const responseToCache = response.clone();
-
-          // 缓存新获取的资源
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
-
-          return response;
-        }).catch((error) => {
-          console.error('[Service Worker] Fetch failed:', error);
-          // 返回离线页面或错误信息
-          return new Response('Offline - Resource not available', {
-            status: 503,
-            statusText: 'Service Unavailable',
-            headers: new Headers({
-              'Content-Type': 'text/plain'
-            })
-          });
+        // 更新缓存
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
         });
+
+        console.log('[Service Worker] Fetched from network and cached:', event.request.url);
+        return response;
+      })
+      .catch(() => {
+        // 网络请求失败，尝试从缓存获取
+        console.log('[Service Worker] Network failed, serving from cache:', event.request.url);
+        return caches.match(event.request);
       })
   );
 });
